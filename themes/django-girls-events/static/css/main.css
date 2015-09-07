@@ -3,8 +3,18 @@
   padding: 0px 15px;
 }
 .navbar-brand img {
-  height: 80px;
+  height: 50px;
+  margin: 15px 0;
 }
-.navbar {
+.navbar, .footer {
   background-color: #f7921d;
+}
+#content {
+  margin-top: 100px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }

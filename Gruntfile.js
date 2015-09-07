@@ -91,7 +91,14 @@ module.exports = function(grunt) {
         tasks: ['concat', 'uglify'],
       },
       theme: {
-        files: ['<%= theme_folder %>/templates/*.html'],
+        files: [
+          '<%= theme_folder %>/templates/*.html',
+          '<%= theme_folder %>/static/img/*.jpg',
+          '<%= theme_folder %>/static/img/*.png',
+          '<%= theme_folder %>/static/img/*.jpeg',
+          '<%= theme_folder %>/static/img/*.gif',
+          '<%= theme_folder %>/static/img/*.svg',
+        ],
         tasks: ['shell:pelican']
       },
       options: {
