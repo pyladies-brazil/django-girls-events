@@ -1,5 +1,3 @@
-/*! django-girls-events - v0.0.0 - 2015-09-07
-* Copyright (c) 2015 ; Licensed  */
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 function corslite(n,t,o){function e(n){return n>=200&&300>n||304===n}function i(){void 0===r.status||e(r.status)?t.call(r,null,r):t.call(r,r,null)}var l=!1;if("undefined"==typeof window.XMLHttpRequest)return t(Error("Browser not supported"));if("undefined"==typeof o){var u=n.match(/^\s*https?:\/\/[^\/]*/);o=u&&u[0]!==location.protocol+"//"+location.domain+(location.port?":"+location.port:"")}var r=new window.XMLHttpRequest;if(o&&!("withCredentials"in r)){r=new window.XDomainRequest;var a=t;t=function(){if(l)a.apply(this,arguments);else{var n=this,t=arguments;setTimeout(function(){a.apply(n,t)},0)}}}return"onload"in r?r.onload=i:r.onreadystatechange=function(){4===r.readyState&&i()},r.onerror=function(n){t.call(this,n||!0,null),t=function(){}},r.onprogress=function(){},r.ontimeout=function(n){t.call(this,n,null),t=function(){}},r.onabort=function(n){t.call(this,n,null),t=function(){}},r.open("GET",n,!0),r.send(null),l=!0,r}"undefined"!=typeof module&&(module.exports=corslite);
 },{}],2:[function(require,module,exports){
@@ -67,12 +65,3 @@ module.exports=window.L=require("leaflet/dist/leaflet-src");
 
 
 //# sourceMappingURL=mapbox.js.map
-var mapService = function () {
-  var token = 'pk.eyJ1IjoicGdyYW5nZWlybyIsImEiOiJiYzI1ZTViNDI1OTc5M2U0Yzg3MzY4NDNlYmY2OGNjOCJ9.5W7JSJ5qlHO61_j-1NrZuw';
-  var identifier = 'pgrangeiro.nclnl4ag';
-
-  this.loadMap = function(libMap) {
-    libMap.mapbox.accessToken = token;
-    libMap.mapbox.map('map', identifier);
-  };
-};

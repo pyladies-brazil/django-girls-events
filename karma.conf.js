@@ -9,8 +9,8 @@ module.exports = function(config) {
       'karma-phantomjs-launcher',
     ],
     files: [
-      'static/js/*.js',
-      'static/js/tests/*.js'
+      'themes/django-girls-events/static/js/*.js',
+      'themes/django-girls-events/static/js/tests/*.test.js'
     ],
   });
 };

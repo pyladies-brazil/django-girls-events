@@ -37,34 +37,6 @@ module.exports = function(grunt) {
         dest: '<%= build_folder %>/js/scripts.min.js'
       }
     },
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        unused: true,
-        boss: true,
-        eqnull: true,
-        browser: true,
-        globals: {
-          jQuery: true
-        }
-      },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      karmaconf: {
-        src: 'karma.conf.js',
-      },
-      files: {
-        src: ['<%= static_folder %>/js/*.js', '<%= static_folder %>/js/tests/*.js']
-      }
-    },
     karma: {
       unit: {
         runnerPort: 9999,
@@ -78,13 +50,9 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
       lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
+        files: '<%= concat.scripts.src %>/tests/*.test.js',
+        tasks: ['karma']
       },
       statics: {
         files: ['<%= concat.scripts.src %>', '<%= concat.styles.src %>'],
@@ -126,13 +94,12 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('build', ['karma', 'jshint', 'concat', 'uglify', 'shell:pelican']);
+  grunt.registerTask('build', ['karma', 'concat', 'uglify', 'shell:pelican']);
   grunt.registerTask('server', ['build', 'connect', 'watch']);
 
 };
