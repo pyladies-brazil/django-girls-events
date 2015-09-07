@@ -10,7 +10,8 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    static_folder: 'themes/django-girls-events/static',
+    theme_folder: 'themes/django-girls-events',
+    static_folder: '<%= theme_folder %>/static',
     build_folder: 'output/theme',
     // Task configuration.
     concat: {
@@ -85,6 +86,14 @@ module.exports = function(grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']
       },
+      statics: {
+        files: ['<%= concat.scripts.src %>', '<%= concat.styles.src %>'],
+        tasks: ['concat', 'uglify'],
+      },
+      theme: {
+        files: ['<%= theme_folder %>/templates/*.html'],
+        tasks: ['shell:pelican']
+      },
       options: {
         livereload: true
       }
@@ -96,6 +105,14 @@ module.exports = function(grunt) {
           port: 9000,
         }
       }
+    },
+    shell: {
+      pelican: {
+        options: {
+          stdout: true
+        },
+        command: 'pelican content -s pelicanconf.py -t <%= theme_folder %>'
+      }
     }
   });
 
@@ -106,8 +123,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('build', ['karma', 'jshint', 'concat', 'uglify']);
+  grunt.registerTask('build', ['karma', 'jshint', 'concat', 'uglify', 'shell:pelican']);
   grunt.registerTask('server', ['build', 'connect', 'watch']);
 
 };

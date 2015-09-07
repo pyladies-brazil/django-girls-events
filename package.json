@@ -27,6 +27,7 @@
     "phantomjs": "~1.9.18",
     "jasmine-core": "~2.3.4",
     "karma-jasmine": "~0.3.6",
-    "karma-phantomjs-launcher": "~0.2.1"
+    "karma-phantomjs-launcher": "~0.2.1",
+    "grunt-shell": "~1.1.2"
   }
 }
