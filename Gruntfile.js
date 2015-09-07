@@ -10,8 +10,8 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    static_folder: 'static',
-    build_folder: 'output/static',
+    static_folder: 'themes/django-girls-events/static',
+    build_folder: 'output/theme',
     // Task configuration.
     concat: {
       options: {
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.scripts.dest %>',
-        dest: '<%= build_folder %>/scripts.min.js'
+        dest: '<%= build_folder %>/js/scripts.min.js'
       }
     },
     jshint: {

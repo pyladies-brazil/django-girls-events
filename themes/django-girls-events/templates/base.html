@@ -1,0 +1,40 @@
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+{% block head %}
+  <title>{{ SITENAME }}</title>
+  <meta charset="{{ CHARSET }}">
+  <meta name="description" content="{{ SITE_DESCRIPTION }}">
+  <meta name="keywords" content="{{ SITE_KEYWORDS }}">
+{% endblock %}
+{% block css %}
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}/css/styles.min.css">
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}
+</head>
+
+<body>
+
+{% block navbar %}
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ SITE_URL }}">
+          <img src="{{ STATIC_URL }}/img/logo-transparent.png">
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+</body>
+</html>

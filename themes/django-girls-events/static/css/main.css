@@ -1,0 +1,10 @@
+.navbar-brand {
+  height: 80px;
+  padding: 0px 15px;
+}
+.navbar-brand img {
+  height: 80px;
+}
+.navbar {
+  background-color: #f7921d;
+}
