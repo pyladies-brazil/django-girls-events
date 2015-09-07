@@ -10,15 +10,21 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+    static_folder: 'static',
+    build_folder: 'build',
     // Task configuration.
     concat: {
       options: {
         banner: '<%= banner %>',
         stripBanners: true
       },
-      dist: {
-        src: ['lib/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+      scripts: {
+        src: ['<%= static_folder %>/js/*.js'],
+        dest: '<%= build_folder %>/scripts.js'
+      },
+      styles: {
+        src: ['<%= static_folder %>/css/*.css'],
+        dest: '<%= build_folder %>/styles.css'
       }
     },
     uglify: {
@@ -26,8 +32,8 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
       dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        src: '<%= concat.scripts.dest %>',
+        dest: '<%= build_folder %>/scripts.min.js'
       }
     },
     jshint: {
@@ -51,12 +57,24 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
-      lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
+      karmaconf: {
+        src: 'karma.conf.js',
+      },
+      files: {
+        src: ['<%= static_folder %>/js/*.js', '<%= static_folder %>/js/tests/*.js']
       }
     },
-    qunit: {
-      files: ['test/**/*.html']
+    karma: {
+      unit: {
+        runnerPort: 9999,
+        colors: true,
+        singleRun: true,
+        autoWatch: false,
+        exclude: ['Gruntfile.js'],
+        browsers: ['PhantomJS'],
+        frameworks: ['jasmine'],
+        configFile: 'karma.conf.js',
+      }
     },
     watch: {
       gruntfile: {
@@ -84,12 +102,12 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('build', ['jshint', 'qunit', 'concat', 'uglify']);
-  grunt.registerTask('server', ['build', 'connect']);
+  grunt.registerTask('build', ['karma', 'jshint', 'concat', 'uglify']);
+  grunt.registerTask('server', ['build', 'connect', 'watch']);
 
 };
