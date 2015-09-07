@@ -20,11 +20,11 @@ module.exports = function(grunt) {
       },
       scripts: {
         src: ['<%= static_folder %>/js/*.js'],
-        dest: '<%= build_folder %>/scripts.js'
+        dest: '<%= build_folder %>/js/scripts.js'
       },
       styles: {
         src: ['<%= static_folder %>/css/*.css'],
-        dest: '<%= build_folder %>/styles.css'
+        dest: '<%= build_folder %>/css/styles.min.css'
       }
     },
     uglify: {
