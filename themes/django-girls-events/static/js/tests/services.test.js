@@ -7,12 +7,18 @@ describe('Testing mapService', function() {
     mocked_lib = jasmine.createSpy('libMap');
     mocked_lib.mapbox = jasmine.createSpy('mapbox');
     mocked_lib.mapbox.accessToken = jasmine.createSpy('accessToken');
+    mocked_lib.mapbox.featureLayer = jasmine.createSpy('featureLayer');
+    mocked_lib.mapbox.featureLayer.addTo = jasmine.createSpy('addTo');
     mocked_lib.mapbox.map = jasmine.createSpy('map');
   });
 
   it('Test loadMap calls map method correctly', function() {
+    service.setEventsOnMap = jasmine.createSpy();
     service.loadMap(mocked_lib);
+
     expect(mocked_lib.mapbox.accessToken).toEqual('pk.eyJ1IjoicGdyYW5nZWlybyIsImEiOiJiYzI1ZTViNDI1OTc5M2U0Yzg3MzY4NDNlYmY2OGNjOCJ9.5W7JSJ5qlHO61_j-1NrZuw');
-    expect(mocked_lib.mapbox.map).toHaveBeenCalledWith('map', 'pgrangeiro.nclnl4ag');
+    expect(mocked_lib.mapbox.map).toHaveBeenCalledWith('map', 'mapbox.streets');
+
+    expect(service.setEventsOnMap).toHaveBeenCalled();
   });
 });

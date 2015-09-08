@@ -20,7 +20,10 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       scripts: {
-        src: ['<%= static_folder %>/js/*.js'],
+        src: [
+          '<%= static_folder %>/js/services.js',
+          '<%= static_folder %>/js/controllers.js'
+        ],
         dest: '<%= build_folder %>/js/scripts.js'
       },
       styles: {
@@ -31,6 +34,10 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         banner: '<%= banner %>'
+      },
+      jquery: {
+        src: '<%= static_folder %>/js/jquery.js',
+        dest: '<%= build_folder %>/js/jquery.min.js'
       },
       dist: {
         src: '<%= concat.scripts.dest %>',
@@ -69,6 +76,10 @@ module.exports = function(grunt) {
         ],
         tasks: ['shell:pelican']
       },
+      data: {
+        files: ['data/*.json'],
+        tasks: ['shell:copy']
+      },
       options: {
         livereload: true
       }
@@ -87,6 +98,12 @@ module.exports = function(grunt) {
           stdout: true
         },
         command: 'pelican content -s pelicanconf.py -t <%= theme_folder %>'
+      },
+      copy: {
+        options: {
+          stdout: true
+        },
+        command: 'cp -R data/ output/'
       }
     }
   });
@@ -99,7 +116,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('build', ['karma', 'concat', 'uglify', 'shell:pelican']);
+  grunt.registerTask('build', ['karma', 'concat', 'uglify', 'shell:pelican', 'shell:copy']);
   grunt.registerTask('server', ['build', 'connect', 'watch']);
 
 };

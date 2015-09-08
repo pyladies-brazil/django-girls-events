@@ -2,12 +2,13 @@
 
 {% block css %}
   {{ super() }}
-  <link rel='stylesheet' href='{{ STATIC_URL }}/css/mapbox.css'>
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
 {% endblock %}
 
-{% block script %}
+{% block scripts %}
   {{ super() }}
-  <script src='{{ STATIC_URL }}/js/mapbox.js'></script>
+  <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+  <script src='{{ STATIC_URL }}/js/scripts.js'></script>
 {% endblock %}
 
 {% block content %}
