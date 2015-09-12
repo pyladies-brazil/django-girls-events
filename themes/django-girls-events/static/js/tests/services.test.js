@@ -1,25 +1,30 @@
-/*
-describe('Testing mapService', function() {
+describe('mapService TestCase', function() {
   var service;
-  var mocked_lib;
 
   beforeEach(function() {
     service = new mapService();
-    mocked_lib = jasmine.createSpy('libMap');
-    mocked_lib.mapbox = jasmine.createSpy('mapbox');
-    mocked_lib.mapbox.accessToken = jasmine.createSpy('accessToken');
-    mocked_lib.mapbox.featureLayer = jasmine.createSpy('featureLayer');
-    mocked_lib.mapbox.featureLayer.addTo = jasmine.createSpy('addTo');
-    mocked_lib.mapbox.map = jasmine.createSpy('map');
   });
 
   it('Test loadMap calls map method correctly', function() {
-    service.setEventsOnMap = jasmine.createSpy();
-    service.loadMap(mocked_lib);
+    L = {
+      mapbox: {
+        accessToken: '',
+        map: function(map, mapbox_type){ return null; },
+        featureLayer: function() {
+          return {addTo: function(map) { return null; }};
+        }
+      }
+    };
+
+    var mocked_lib = L;
+
+    spyOn(mocked_lib.mapbox, 'map');
+    spyOn(mocked_lib.mapbox, 'featureLayer').and.callThrough();
+
+    var map, layer = service.loadMap();
 
     expect(mocked_lib.mapbox.accessToken).toEqual('pk.eyJ1IjoicGdyYW5nZWlybyIsImEiOiJiYzI1ZTViNDI1OTc5M2U0Yzg3MzY4NDNlYmY2OGNjOCJ9.5W7JSJ5qlHO61_j-1NrZuw');
     expect(mocked_lib.mapbox.map).toHaveBeenCalledWith('map', 'mapbox.streets');
-
-    expect(service.setEventsOnMap).toHaveBeenCalled();
+    expect(mocked_lib.mapbox.featureLayer).toHaveBeenCalled();
   });
-});*/
+});
