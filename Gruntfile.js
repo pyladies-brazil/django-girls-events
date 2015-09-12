@@ -21,8 +21,9 @@ module.exports = function(grunt) {
       },
       scripts: {
         src: [
+          '<%= static_folder %>/js/factories.js',
           '<%= static_folder %>/js/services.js',
-          '<%= static_folder %>/js/controllers.js'
+          '<%= static_folder %>/js/use_cases.js'
         ],
         dest: '<%= static_folder %>/js/scripts.js'
       },
@@ -84,7 +85,7 @@ module.exports = function(grunt) {
       },
       statics: {
         files: ['<%= concat.scripts.src %>', '<%= concat.styles.src %>'],
-        tasks: ['concat', 'uglify'],
+        tasks: ['karma', 'concat', 'uglify'],
       },
       theme: {
         files: [

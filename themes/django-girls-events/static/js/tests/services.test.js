@@ -1,3 +1,4 @@
+/*
 describe('Testing mapService', function() {
   var service;
   var mocked_lib;
@@ -21,4 +22,4 @@ describe('Testing mapService', function() {
 
     expect(service.setEventsOnMap).toHaveBeenCalled();
   });
-});
+});*/
