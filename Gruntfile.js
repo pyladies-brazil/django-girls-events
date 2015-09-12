@@ -23,7 +23,8 @@ module.exports = function(grunt) {
         src: [
           '<%= static_folder %>/js/factories.js',
           '<%= static_folder %>/js/services.js',
-          '<%= static_folder %>/js/use_cases.js'
+          '<%= static_folder %>/js/use_cases.js',
+          '<%= static_folder %>/js/app.js'
         ],
         dest: '<%= static_folder %>/js/scripts.js'
       },
