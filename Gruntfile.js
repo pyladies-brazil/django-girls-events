@@ -80,10 +80,12 @@ module.exports = function(grunt) {
       }
     },
     watch: {
+      /*
       lib_test: {
         files: '<%= static_folder %>/js/tests/*.test.js',
         tasks: ['karma']
       },
+      */
       statics: {
         files: ['<%= concat.scripts.src %>', '<%= concat.styles.src %>'],
         tasks: ['karma', 'concat', 'uglify'],

@@ -37,19 +37,22 @@ describe('eventService TestCase', function() {
   });
 
   it('Test getEvents calls correct data json url', function() {
-    spyOn($, 'getJSON').and.callThrough();
+    spyOn($, 'ajax').and.callThrough();
     service.getEvents();
 
-    expect($.getJSON).toHaveBeenCalledWith('data/events.json');
+    expect($.ajax).toHaveBeenCalledWith({
+      url: 'data/events.json',
+      async: false
+    });
   });
 
   it('Test getEvents successfully if it not has events', function() {
     var d = $.Deferred();
     d.resolve([]);
 
-    spyOn($, 'getJSON').and.returnValue(d.promise());
+    spyOn($, 'ajax').and.returnValue(d.promise());
 
-    events = service.getEvents();
+    var events = service.getEvents();
     expect(events.length).toEqual(0);
   });
 
@@ -63,9 +66,9 @@ describe('eventService TestCase', function() {
       coordinates: ["1", "2"]
     }]);
 
-    spyOn($, 'getJSON').and.returnValue(d.promise());
+    spyOn($, 'ajax').and.returnValue(d.promise());
 
-    events = service.getEvents();
+    var events = service.getEvents();
     expect(events.length).toEqual(1);
   });
 });

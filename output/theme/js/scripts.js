@@ -26,7 +26,10 @@ var eventService = function () {
 
   this.getEvents = function() {
     var events = [];
-    $.getJSON(geo_data_url).done(function(response) {
+    $.ajax({
+      url: geo_data_url,
+      async: false
+    }).done(function(response) {
       $.each(response, function(index, item) {
         events.push(pinFactory(item));
       });
