@@ -24,11 +24,24 @@ module.exports = function(grunt) {
           '<%= static_folder %>/js/services.js',
           '<%= static_folder %>/js/controllers.js'
         ],
-        dest: '<%= build_folder %>/js/scripts.js'
+        dest: '<%= static_folder %>/js/scripts.js'
+      },
+      json2: {
+        src: [
+          '<%= static_folder %>/js/json2.js',
+          '<%= static_folder %>/js/json_parse.js',
+          '<%= static_folder %>/js/json_parse_state.js',
+          '<%= static_folder %>/js/cycle.js',
+        ],
+        dest: '<%= static_folder %>/js/json.js',
+      },
+      bootstrap: {
+        src: '<%= static_folder %>/css/bootstrap.css',
+        dest: '<%= build_folder %>/css/bootstrap.min.css'
       },
       styles: {
-        src: ['<%= static_folder %>/css/*.css'],
-        dest: '<%= build_folder %>/css/styles.min.css'
+        src: '<%= static_folder %>/css/main.css',
+        dest: '<%= build_folder %>/css/main.min.css'
       }
     },
     uglify: {
@@ -42,6 +55,14 @@ module.exports = function(grunt) {
       dist: {
         src: '<%= concat.scripts.dest %>',
         dest: '<%= build_folder %>/js/scripts.min.js'
+      },
+      bootstrap: {
+        src: '<%= static_folder %>/js/bootstrap.js',
+        dest: '<%= build_folder %>/js/bootstrap.min.js'
+      },
+      json2: {
+        src: '<%= static_folder %>/js/json.js',
+        dest: '<%= build_folder %>/js/json.min.js'
       }
     },
     karma: {
@@ -58,7 +79,7 @@ module.exports = function(grunt) {
     },
     watch: {
       lib_test: {
-        files: '<%= concat.scripts.src %>/tests/*.test.js',
+        files: '<%= static_folder %>/js/tests/*.test.js',
         tasks: ['karma']
       },
       statics: {

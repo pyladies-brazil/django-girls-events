@@ -7,7 +7,8 @@ describe('Testing mapService', function() {
     mocked_lib = jasmine.createSpy('libMap');
     mocked_lib.mapbox = jasmine.createSpy('mapbox');
     mocked_lib.mapbox.accessToken = jasmine.createSpy('accessToken');
-    mocked_lib.mapbox.featureLayer = jasmine.createSpy('accessToken');
+    mocked_lib.mapbox.featureLayer = jasmine.createSpy('featureLayer');
+    mocked_lib.mapbox.featureLayer.addTo = jasmine.createSpy('addTo');
     mocked_lib.mapbox.map = jasmine.createSpy('map');
   });
 

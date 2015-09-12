@@ -1,4 +1,4 @@
 $(document).ready(function() {
   var service = new mapService();
-  service.loadMap(L);
+  //service.loadMap(L);
 });
