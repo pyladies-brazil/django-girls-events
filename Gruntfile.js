@@ -79,13 +79,47 @@ module.exports = function(grunt) {
         configFile: 'karma.conf.js',
       }
     },
+    jshint: {
+      options: {
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        sub: true,
+        undef: true,
+        unused: true,
+        boss: true,
+        eqnull: true,
+        browser: true,
+        globals: {
+          jQuery: true
+        }
+      },
+      data: {
+        src: 'output/data/*.json'
+      }
+    },
+    shell: {
+      pelican: {
+        options: {
+          stdout: true
+        },
+        command: 'pelican content -s pelicanconf.py -t <%= theme_folder %>'
+      },
+      copy: {
+        options: {
+          stdout: true
+        },
+        command: 'cp -R data/ output/'
+      }
+    },
     watch: {
-      /*
       lib_test: {
         files: '<%= static_folder %>/js/tests/*.test.js',
         tasks: ['karma']
       },
-      */
       statics: {
         files: ['<%= concat.scripts.src %>', '<%= concat.styles.src %>'],
         tasks: ['karma', 'concat', 'uglify'],
@@ -103,7 +137,7 @@ module.exports = function(grunt) {
       },
       data: {
         files: ['data/*.json'],
-        tasks: ['shell:copy']
+        tasks: ['jshint:data', 'shell:copy']
       },
       options: {
         livereload: true
@@ -116,32 +150,18 @@ module.exports = function(grunt) {
           port: 9000,
         }
       }
-    },
-    shell: {
-      pelican: {
-        options: {
-          stdout: true
-        },
-        command: 'pelican content -s pelicanconf.py -t <%= theme_folder %>'
-      },
-      copy: {
-        options: {
-          stdout: true
-        },
-        command: 'cp -R data/ output/'
-      }
     }
   });
 
-  // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('build', ['karma', 'concat', 'uglify', 'shell:pelican', 'shell:copy']);
+  grunt.registerTask('build', ['karma', 'jshint', 'concat', 'uglify', 'shell:pelican', 'shell:copy']);
   grunt.registerTask('server', ['build', 'connect', 'watch']);
 
 };
