@@ -20,7 +20,7 @@ var mapUseCase = function() {
 
 
 var listEventsUseCase = function() {
-  var service = new eventService();
+  var repository = new eventRepository();
 
   var getHandleBarsTemplate = function() {
     var source = $("#events-template").html();
@@ -33,7 +33,7 @@ var listEventsUseCase = function() {
   };
 
   this.execute = function() {
-    var events = service.getEvents();
+    var events = repository.getEvents();
     var template = getHandleBarsTemplate();
     setHandleBarsContext(template, events);
   };
