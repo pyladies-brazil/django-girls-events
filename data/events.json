@@ -7,7 +7,11 @@
         "coordinates":["-43", "-22"],
         "date": "2015-06-20",
         "site": "https://djangogirls.org/niteroi/",
-        "local": "Niterói - RJ"
+        "local": "Niterói - RJ",
+        "email": "niteroi@djangogirls.org",
+        "twitter": "https://twitter.com/djangogirls_nit",
+        "facebook": "https://www.facebook.com/djangogirlsniteroi",
+        "github": "https://github.com/orgs/django-girls-niteroi"
     },
     {
         "id":"django-girls-sjc",
@@ -17,6 +21,10 @@
         "coordinates":["-45", "-23"],
         "date": "2015-11-07",
         "site": "https://djangogirls.org/saojosedoscampos/",
-        "local": "São José dos Campos - SP"
+        "local": "São José dos Campos - SP",
+        "email": "saojosedoscampos@djangogirls.org",
+        "twitter": "https://twitter.com/djangogirlssjc",
+        "facebook": "https://www.facebook.com/djangogirlssjc",
+        "github": "https://github.com/orgs/djangogirls-sjc"
     }
 ]
