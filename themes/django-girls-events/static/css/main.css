@@ -29,6 +29,7 @@ ul.agenda {
 ul.agenda li {
   padding: 10px;
   width: 100%;
+  color: #ffffff;
   background-color: #cccccc;
 }
 ul.agenda li:first-child {
@@ -41,6 +42,7 @@ ul.agenda li:last-child {
 }
 ul.agenda li a {
   float: right;
+  color: #ffffff;
   margin-left: 5px;
   font-size: 20px;
 }

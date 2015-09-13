@@ -1,4 +1,6 @@
 $(document).ready(function() {
-  var use_case = new mapUseCase();
-  use_case.execute();
+  var map_use_case = new mapUseCase();
+  var list_events_use_case = new listEventsUseCase();
+  map_use_case.execute();
+  list_events_use_case.execute();
 });
