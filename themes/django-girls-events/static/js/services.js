@@ -2,18 +2,19 @@ var eventService = function () {
   var geo_data_url = 'data/events.json';
 
   this.getEvents = function() {
-    var events = collectionFactory();
+    var events = [];
     $.ajax({
       url: geo_data_url,
       async: false
     }).done(function(response) {
       $.each(response, function(index, item) {
-        events.features.push(pinFactory(item));
+        events.push(item);
       });
     });
     return events;
   };
 };
+
 
 var mapService = function () {
   var token = 'pk.eyJ1IjoicGdyYW5nZWlybyIsImEiOiJiYzI1ZTViNDI1OTc5M2U0Yzg3MzY4NDNlYmY2OGNjOCJ9.5W7JSJ5qlHO61_j-1NrZuw';
@@ -25,3 +26,23 @@ var mapService = function () {
     return map, layer;
   };
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

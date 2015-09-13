@@ -1,4 +1,4 @@
-/*! django-girls-events - v0.0.0 - 2015-09-12
+/*! django-girls-events - v0.0.0 - 2015-09-13
 * Copyright (c) 2015 ; Licensed  */
 /*jslint 
     eval, for, this 

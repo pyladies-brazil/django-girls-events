@@ -31,6 +31,7 @@ describe('mapService TestCase', function() {
   });
 });
 
+
 describe('eventService TestCase', function() {
   var service;
 
@@ -55,7 +56,7 @@ describe('eventService TestCase', function() {
     spyOn($, 'ajax').and.returnValue(d.promise());
 
     var events = service.getEvents();
-    expect(events.features.length).toEqual(0);
+    expect(events.length).toEqual(0);
   });
 
   it('Test getEvents successfully', function() {
@@ -71,6 +72,6 @@ describe('eventService TestCase', function() {
     spyOn($, 'ajax').and.returnValue(d.promise());
 
     var events = service.getEvents();
-    expect(events.features.length).toEqual(1);
+    expect(events.length).toEqual(1);
   });
 });

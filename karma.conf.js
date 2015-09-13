@@ -12,6 +12,7 @@ module.exports = function(config) {
       'themes/django-girls-events/static/js/jquery.js',
       'themes/django-girls-events/static/js/factories.js',
       'themes/django-girls-events/static/js/services.js',
+      'themes/django-girls-events/static/js/repositories.js',
       'themes/django-girls-events/static/js/tests/*.test.js'
     ],
     exclude: [

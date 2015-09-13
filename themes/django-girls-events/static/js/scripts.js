@@ -1,4 +1,4 @@
-/*! django-girls-events - v0.0.0 - 2015-09-12
+/*! django-girls-events - v0.0.0 - 2015-09-13
 * Copyright (c) 2015 ; Licensed  */
 var pinFactory = function(pin_data) {
   var pin_size = 'medium';
@@ -33,18 +33,19 @@ var eventService = function () {
   var geo_data_url = 'data/events.json';
 
   this.getEvents = function() {
-    var events = collectionFactory();
+    var events = [];
     $.ajax({
       url: geo_data_url,
       async: false
     }).done(function(response) {
       $.each(response, function(index, item) {
-        events.features.push(pinFactory(item));
+        events.push(item);
       });
     });
     return events;
   };
 };
+
 
 var mapService = function () {
   var token = 'pk.eyJ1IjoicGdyYW5nZWlybyIsImEiOiJiYzI1ZTViNDI1OTc5M2U0Yzg3MzY4NDNlYmY2OGNjOCJ9.5W7JSJ5qlHO61_j-1NrZuw';
@@ -57,17 +58,49 @@ var mapService = function () {
   };
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var mapRepository = function () {
+  var service = new eventService();
+
+  this.getPins = function() {
+    var events = collectionFactory();
+    $.each(service.getEvents(), function(index, item) {
+      events.features.push(pinFactory(item));
+    });
+    return events;
+  };
+};
+
 var mapUseCase = function() {
-  var map_service = new mapService();
-  var event_service = new eventService();
+  var service = new mapService();
+  var repository = new mapRepository();
 
   var prepareMap = function() {
-    var map, layer = map_service.loadMap();
+    var map, layer = service.loadMap();
     return map, layer;
   };
 
   var setEventsOnLayer = function(layer) {
-    var events = event_service.getEvents();
+    var events = repository.getPins();
     layer.setGeoJSON(events);
   };
 

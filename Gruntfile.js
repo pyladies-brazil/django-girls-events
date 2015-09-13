@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         src: [
           '<%= static_folder %>/js/factories.js',
           '<%= static_folder %>/js/services.js',
+          '<%= static_folder %>/js/repositories.js',
           '<%= static_folder %>/js/use_cases.js',
           '<%= static_folder %>/js/app.js'
         ],
@@ -69,6 +70,10 @@ module.exports = function(grunt) {
       json2: {
         src: '<%= static_folder %>/js/json.js',
         dest: '<%= build_folder %>/js/json.min.js'
+      },
+      handlebars: {
+        src: '<%= static_folder %>/js/handlebars.js',
+        dest: '<%= build_folder %>/js/handlebars.min.js'
       }
     },
     karma: {

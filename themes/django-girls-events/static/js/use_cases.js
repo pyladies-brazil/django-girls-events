@@ -1,14 +1,14 @@
 var mapUseCase = function() {
-  var map_service = new mapService();
-  var event_service = new eventService();
+  var service = new mapService();
+  var repository = new mapRepository();
 
   var prepareMap = function() {
-    var map, layer = map_service.loadMap();
+    var map, layer = service.loadMap();
     return map, layer;
   };
 
   var setEventsOnLayer = function(layer) {
-    var events = event_service.getEvents();
+    var events = repository.getPins();
     layer.setGeoJSON(events);
   };
 
