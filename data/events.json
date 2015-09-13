@@ -4,6 +4,19 @@
         "title":"Django Girls Niterói",
         "description":"",
         "color":"#f7921d",
-        "coordinates":["-43", "-22"]
+        "coordinates":["-43", "-22"],
+        "date": "2015-06-20",
+        "site": "https://djangogirls.org/niteroi/",
+        "local": "Niterói - RJ"
+    },
+    {
+        "id":"django-girls-sjc",
+        "title":"Django Girls São José dos Campos",
+        "description":"",
+        "color":"#2E9E9E",
+        "coordinates":["-45", "-23"],
+        "date": "2015-11-07",
+        "site": "https://djangogirls.org/saojosedoscampos/",
+        "local": "São José dos Campos - SP"
     }
 ]

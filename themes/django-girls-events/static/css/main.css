@@ -20,5 +20,27 @@ body {
   height: 60px;
 }
 #map {
-  height: 480px;
+  height: 500px;
+}
+ul.agenda {
+  padding: 0;
+  list-style: none;
+}
+ul.agenda li {
+  padding: 10px;
+  width: 100%;
+  background-color: #cccccc;
+}
+ul.agenda li:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+ul.agenda li:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+ul.agenda li a {
+  float: right;
+  margin-left: 5px;
+  font-size: 20px;
 }

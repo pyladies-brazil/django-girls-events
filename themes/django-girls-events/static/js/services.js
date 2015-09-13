@@ -2,13 +2,13 @@ var eventService = function () {
   var geo_data_url = 'data/events.json';
 
   this.getEvents = function() {
-    var events = [];
+    var events = collectionFactory();
     $.ajax({
       url: geo_data_url,
       async: false
     }).done(function(response) {
       $.each(response, function(index, item) {
-        events.push(pinFactory(item));
+        events.features.push(pinFactory(item));
       });
     });
     return events;
@@ -20,7 +20,7 @@ var mapService = function () {
 
   this.loadMap = function() {
     L.mapbox.accessToken = token;
-    var map = L.mapbox.map('map', 'mapbox.streets');
+    var map = L.mapbox.map('map', 'mapbox.streets').setView([-15, -55], 4);
     var layer = L.mapbox.featureLayer().addTo(map);
     return map, layer;
   };

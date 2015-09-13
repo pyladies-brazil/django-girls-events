@@ -16,14 +16,11 @@ describe('pinFactory TestCase', function() {
   it('Construct pin object correctly', function() {
     var pin = factory(pin_data);
 
-    expect('FeatureCollection', pin.type);
-
-    pin_options = pin.features[0];
-    expect('Feature', pin_options.type);
+    expect('Feature', pin.type);
     expect({
       type: 'Point',
       coordinates: pin_data.coordinates
-    }, pin_options.geometry);
+    }, pin.geometry);
     expect({
       'id': pin_data.id,
       'title': pin_data.title,
@@ -31,7 +28,22 @@ describe('pinFactory TestCase', function() {
       'marker-size': 'medium',
       'marker-color': pin_data.color,
       'marker-symbol': 'heart',
-    }, pin_options.properties);
+    }, pin.properties);
 
+  });
+});
+
+describe('collectionFactory TestCase', function() {
+  var factory;
+
+  beforeEach(function() {
+    factory = collectionFactory;
+  });
+
+  it('Construct collection of pins correctly', function() {
+    var pin_collection = factory();
+
+    expect(pin_collection.type).toEqual('FeatureCollection');
+    expect(pin_collection.features.length).toEqual(0);
   });
 });

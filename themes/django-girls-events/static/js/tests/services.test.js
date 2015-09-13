@@ -9,7 +9,9 @@ describe('mapService TestCase', function() {
     L = {
       mapbox: {
         accessToken: '',
-        map: function(map, mapbox_type){ return null; },
+        map: function(map, mapbox_type){
+          return {setView: function(map) { return null; }};
+        },
         featureLayer: function() {
           return {addTo: function(map) { return null; }};
         }
@@ -18,7 +20,7 @@ describe('mapService TestCase', function() {
 
     var mocked_lib = L;
 
-    spyOn(mocked_lib.mapbox, 'map');
+    spyOn(mocked_lib.mapbox, 'map').and.callThrough();
     spyOn(mocked_lib.mapbox, 'featureLayer').and.callThrough();
 
     var map, layer = service.loadMap();
@@ -53,7 +55,7 @@ describe('eventService TestCase', function() {
     spyOn($, 'ajax').and.returnValue(d.promise());
 
     var events = service.getEvents();
-    expect(events.length).toEqual(0);
+    expect(events.features.length).toEqual(0);
   });
 
   it('Test getEvents successfully', function() {
@@ -69,6 +71,6 @@ describe('eventService TestCase', function() {
     spyOn($, 'ajax').and.returnValue(d.promise());
 
     var events = service.getEvents();
-    expect(events.length).toEqual(1);
+    expect(events.features.length).toEqual(1);
   });
 });

@@ -41,6 +41,10 @@ module.exports = function(grunt) {
         src: '<%= static_folder %>/css/bootstrap.css',
         dest: '<%= build_folder %>/css/bootstrap.min.css'
       },
+      font_awesome: {
+        src: '<%= static_folder %>/css/font-awesome.css',
+        dest: '<%= build_folder %>/css/font-awesome.min.css'
+      },
       styles: {
         src: '<%= static_folder %>/css/main.css',
         dest: '<%= build_folder %>/css/main.min.css'
@@ -98,7 +102,7 @@ module.exports = function(grunt) {
         }
       },
       data: {
-        src: 'output/data/*.json'
+        src: 'data/*.json'
       }
     },
     shell: {

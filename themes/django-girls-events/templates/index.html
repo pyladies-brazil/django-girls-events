@@ -3,19 +3,37 @@
 {% block css %}
   {{ super() }}
   <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+  <link href='{{ STATIC_URL }}/css/font-awesome.min.css' rel="stylesheet"/>
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
   <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
-  <script src='{{ STATIC_URL }}/js/scripts.js'></script>
+  <script src='{{ STATIC_URL }}/js/scripts.min.js'></script>
 {% endblock %}
 
 {% block content %}
-<h2>Eventos Django Girls pelo Brasil</h2>
-<div id="map">
-
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <h2>Próximos eventos pelo Brasil</h2>
+      <ul class="agenda">
+        <li>
+          07/11/2015 - São José dos Campos - SP
+          <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" title="facebook"><i class="fa fa-facebook-official"></i></a>
+          <a href="#" title="github"><i class="fa fa-github"></i></a>
+          <a href="#" title="e-mail"><i class="fa fa-envelope"></i></a>
+          <a href="#" title="site"><i class="fa fa-link"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div id="map"></div>
+    </div>
+  </div>
 </div>
-<div id="data-table">
+<div class="row">
+  <div id="data-table"></div>
 </div>
 {% endblock %}

@@ -11,7 +11,7 @@
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic'>
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic'>
   <link rel="stylesheet" type='text/css' href="{{ STATIC_URL }}/css/bootstrap.min.css">
-  <link rel="stylesheet" type='text/css' href="{{ STATIC_URL }}/css/styles.min.css">
+  <link rel="stylesheet" type='text/css' href="{{ STATIC_URL }}/css/main.min.css">
 {% endblock %}
 {% block scripts %}
   <script src='{{ STATIC_URL }}/js/jquery.min.js'></script>
@@ -23,15 +23,17 @@
 {% block navbar %}
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{ SITE_URL }}">
-        <img src="{{ STATIC_URL }}/img/logo-transparent.png">
-      </a>
+    <div class="row">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ SITE_URL }}">
+          <img src="{{ STATIC_URL }}/img/logo-transparent.png">
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
     </div>
-  </div>
-  <div id="navbar" class="navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-right">
-    </ul>
   </div>
 </div>
 {% endblock %}
@@ -44,8 +46,9 @@
 <div class="footer">
   <div class="container">
     {% block footer %}
-    <p class="text-muted">
-    </p>
+    <div class="row">
+      <p class="text-muted"></p>
+    </div>
     {% endblock %}
   </div>
 </div>

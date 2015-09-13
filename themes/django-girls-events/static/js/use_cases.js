@@ -9,9 +9,7 @@ var mapUseCase = function() {
 
   var setEventsOnLayer = function(layer) {
     var events = event_service.getEvents();
-    $.each(events, function(index, item) {
-      layer.setGeoJSON(item);
-    });
+    layer.setGeoJSON(events);
   };
 
   this.execute = function() {
