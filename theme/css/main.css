@@ -1,0 +1,131 @@
+body {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+/** NAVBAR **/
+.header-navbar {
+  height: 80px;
+}
+.navbar-brand {
+  height: 80px;
+  padding: 0px 15px;
+}
+.navbar-brand img {
+  height: 50px;
+  margin: 15px 0;
+}
+.navbar {
+  background-color: #f7921d;
+}
+ul.nav {
+  margin: 0;
+}
+ul.nav li {
+  font-weight: bold !important;
+  font-size: 22px;
+  line-height: 50px;
+  margin: 15px 0;
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  text-transform: uppercase;
+}
+ul.nav li a {
+  color: #fff !important;
+  padding-right: 0;
+  padding-left: 30px;
+}
+/** END NAVBAR **/
+.overlay {
+  width: 100%;
+  height: 450px;
+  background-image: url('../img/django_stickers.jpg');
+  background-size: cover;
+}
+/** BODY CONTENT **/
+#map {
+  height: 500px;
+}
+ul.agenda {
+  padding: 0;
+  list-style: none;
+}
+ul.agenda li {
+  padding: 10px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #cccccc;
+  font-weight: bolder;
+  border-bottom: solid 1px #f5f5f5;
+}
+ul.agenda li:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+ul.agenda li:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+ul.agenda li a {
+  float: right;
+  color: #ffffff;
+  margin-left: 5px;
+  font-size: 20px;
+}
+.icons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.icons h3 {
+  text-align: center;
+}
+.icons p {
+  margin-top: 10px;
+  text-align: justify;
+}
+.icon {
+  padding: 20px;
+  border: 4px solid #f7921d;
+  border-radius: 135px;
+  width: 135px;
+  margin: auto;
+  color: #f7921d;
+}
+.icon .fa{
+  font-size: 100px;
+  line-height: 86px;
+  position: relative;
+}
+.icon .fa-heart{
+  left: -6px;
+  top: 4px;
+}
+.icon .fa-github-alt{
+  left: -3px;
+  top: -2px;
+}
+.icon .fa-plus{
+  left: 4px;
+  top: 4px;
+}
+.icon .fa-book{
+  left: -1px;
+}
+.icon .fa-star{
+  left: -2px;
+}
+.icon .fa-graduation-cap{
+  left: -11px;
+   font-size: 85px;
+}
+/** END BODY CONTENT **/
+/** FOOTER **/
+.footer {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin: 0 0 5px;
+}
+/** END FOOTER **/

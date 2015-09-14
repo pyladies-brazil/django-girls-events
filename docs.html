@@ -1,11 +1,41 @@
-{% extends 'base.html' %}
+<html lang="pt-br">
+<head>
+  <title>Django Girls Brasil</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Agregador de eventos Django Girls pelo Brasil">
+  <meta name="keywords" content="Django Girls, Eventos, Brasil">
+  <link rel="icon" href="theme/img/favicon.png">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Ubuntu:400,700'>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic'>
+  <link rel="stylesheet" type='text/css' href="theme/css/bootstrap.min.css">
+  <link rel="stylesheet" type='text/css' href="theme/css/main.min.css">
 
-{% block css %}
-  {{ super() }}
-  <link href='{{ STATIC_URL }}/css/font-awesome.min.css' rel="stylesheet"/>
-{% endblock %}
+  <link href='theme/css/font-awesome.min.css' rel="stylesheet"/>
+  <script src='theme/js/jquery.min.js'></script>
+</head>
 
-{% block content %}
+<body>
+
+<div class="header-navbar">
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">
+          <img src="theme/img/logo-transparent.png">
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="docs.html">Documentação</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="content" class="container">
 <h2>Documentação</h2>
 <p>Nem toda a documentação do Django Girls se encontra atualmente traduzida para o pt-br. Caso você tenha interesse em ajudar com isso nós seríamos eternamente gratas <3 Faça o fork de algum <a href="https://djangogirls.org/resources/">repositório de documentação do Django Girls</a> e nos avise. Nós podemos te ajudar com esta missão e assim que for finalizada vamos adicioná-la aqui.</p>
 <p>Atualmente três documentos estão completamente traduzidos para o pt-br mas sempre estão em constante atualização:</p>
@@ -32,4 +62,14 @@
     <p>Não se deixe enganar: Guiar iniciantes pelo caminho do conhecimento não é uma tarefa fácil! Este manual irá auxiliar @s treinador@s nesta tarefa. Para ajudar neste projeto, faça um fork do <a href="https://github.com/pyladies-brazil/coach-manual">nosso repositório</a> e submeta a tradução através de pull request.</a>
   </div>
 </div>
-{% endblock %}
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Desenvolvido por <a href="https://github.com/pgrangeiro/">@pgrangeiro</a> e mantido por <a href="http://brasil.pyladies.com/">PyLadies Brasil</a>.</p>
+    <p><a href="https://djangogirls.org/">Django Girls</a> é uma iniciativa sem fins lucrativos. Todos os participantes devem seguir o <a href="https://djangogirls.org/pages/coc-pt-br/">Código de Conduta</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

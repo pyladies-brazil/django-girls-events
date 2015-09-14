@@ -1,7 +1,0 @@
-/node_modules
-/env
-*.pyc
-*.pyo
-*.swp
-*.swo
-/output

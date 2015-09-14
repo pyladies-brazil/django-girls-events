@@ -1,0 +1,77 @@
+<html lang="pt-br">
+<head>
+  <title>Django Girls Brasil</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Agregador de eventos Django Girls pelo Brasil">
+  <meta name="keywords" content="Django Girls, Eventos, Brasil">
+  <link rel="icon" href="theme/img/favicon.png">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Ubuntu:400,700'>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic'>
+  <link rel="stylesheet" type='text/css' href="theme/css/bootstrap.min.css">
+  <link rel="stylesheet" type='text/css' href="theme/css/main.min.css">
+
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+  <link href='theme/css/font-awesome.min.css' rel="stylesheet"/>
+    <script src='theme/js/jquery.min.js'></script>
+
+  <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+  <script src='theme/js/handlebars.min.js'></script>
+  <script src='theme/js/scripts.js'></script>
+</head>
+
+<body>
+
+<div class="header-navbar">
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">
+          <img src="theme/img/logo-transparent.png">
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="docs.html">Documentação</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="content" class="container">
+<div class="row">
+  <div class="col-lg-6">
+<h2>Eventos pelo Brasil</h2>
+
+<script id="events-template" type="text/x-handlebars-template">
+<ul class="agenda">
+  {{#each this}}
+  <li style="background-color: {{color}}">
+    {{date}} - {{local}}
+    <a href="{{twitter}}" title="twitter"><i class="fa fa-twitter"></i></a>
+    <a href="{{facebook}}" title="facebook"><i class="fa fa-facebook-official"></i></a>
+    <a href="{{github}}" title="github"><i class="fa fa-github"></i></a>
+    <a href="{{email}}" title="e-mail"><i class="fa fa-envelope"></i></a>
+    <a href="{{site}}" title="site"><i class="fa fa-link"></i></a>
+  </li>
+  {{/each}}
+</ul>
+</script>
+<div id="events-list"></div>  </div>
+  <div class="col-lg-6">
+    <div id="map"></div>
+  </div>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Desenvolvido por <a href="https://github.com/pgrangeiro/">@pgrangeiro</a> e mantido por <a href="http://brasil.pyladies.com/">PyLadies Brasil</a>.</p>
+    <p><a href="https://djangogirls.org/">Django Girls</a> é uma iniciativa sem fins lucrativos. Todos os participantes devem seguir o <a href="https://djangogirls.org/pages/coc-pt-br/">Código de Conduta</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
