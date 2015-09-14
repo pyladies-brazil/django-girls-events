@@ -27,6 +27,10 @@ Para acessar os estáticos gerados, acesse http://localhost:9000/output
 ## Adicionando o seu evento Django Girls
 Para adicionar o seu evento, faça um fork deste projeto e altere o arquivo data/events.json com os seus dados.
 Execute os testes e caso todos eles tenham passado, faça um pull request para este repositório.
+Para executar os testes digite:
+```sh
+grunt karma
+```
 O seu pull request sendo aceito, está pronto! Seu evento será listado na home do projeto.
 
 ##Dúvidas?
