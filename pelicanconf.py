@@ -25,6 +25,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+DIRECT_TEMPLATES = ['index', 'about']
+
 '''
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
