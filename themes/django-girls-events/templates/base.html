@@ -23,16 +23,14 @@
 {% block navbar %}
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="row">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{ SITE_URL }}">
-          <img src="{{ STATIC_URL }}/img/logo-transparent.png">
-        </a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-        </ul>
-      </div>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ SITE_URL }}">
+        <img src="{{ STATIC_URL }}/img/logo-transparent.png">
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
     </div>
   </div>
 </div>
@@ -43,15 +41,14 @@
 {% endblock %}
 </div>
 
-<div class="footer">
+<footer class="footer">
   <div class="container">
     {% block footer %}
-    <div class="row">
-      <p class="text-muted"></p>
-    </div>
+    <p>Desenvolvido por <a href="https://github.com/pgrangeiro/">@pgrangeiro</a> e mantido por <a href="http://brasil.pyladies.com/">PyLadies Brasil</a>.</p>
+    <p><a href="https://djangogirls.org/">Django Girls</a> é uma iniciativa sem fins lucrativos. Todos os participantes devem seguir o <a href="https://djangogirls.org/pages/coc-pt-br/">Código de Conduta</a>.</p>
     {% endblock %}
   </div>
-</div>
+</footer>
 
 </body>
 </html>

@@ -14,33 +14,29 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
-  <div class="col-md-12">
-    <div class="col-md-6">
-      <h2>Próximos eventos pelo Brasil</h2>
+<div class="col-lg-6">
+  <h2>Próximos eventos pelo Brasil</h2>
 
-      {% raw %}
-      <script id="events-template" type="text/x-handlebars-template">
-      <ul class="agenda">
-        {{#each this}}
-        <li style="background-color: {{color}}">
-          {{date}} - {{local}}
-          <a href="{{twitter}}" title="twitter"><i class="fa fa-twitter"></i></a>
-          <a href="{{facebook}}" title="facebook"><i class="fa fa-facebook-official"></i></a>
-          <a href="{{github}}" title="github"><i class="fa fa-github"></i></a>
-          <a href="{{email}}" title="e-mail"><i class="fa fa-envelope"></i></a>
-          <a href="{{site}}" title="site"><i class="fa fa-link"></i></a>
-        </li>
-        {{/each}}
-      </ul>
-      </script>
-      {% endraw %}
-      <div id="events-list"></div>
+  {% raw %}
+  <script id="events-template" type="text/x-handlebars-template">
+  <ul class="agenda">
+    {{#each this}}
+    <li style="background-color: {{color}}">
+      {{date}} - {{local}}
+      <a href="{{twitter}}" title="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="{{facebook}}" title="facebook"><i class="fa fa-facebook-official"></i></a>
+      <a href="{{github}}" title="github"><i class="fa fa-github"></i></a>
+      <a href="{{email}}" title="e-mail"><i class="fa fa-envelope"></i></a>
+      <a href="{{site}}" title="site"><i class="fa fa-link"></i></a>
+    </li>
+    {{/each}}
+  </ul>
+  </script>
+  {% endraw %}
+  <div id="events-list"></div>
 
-    </div>
-    <div class="col-md-6">
-      <div id="map"></div>
-    </div>
-  </div>
+</div>
+<div class="col-lg-6">
+  <div id="map"></div>
 </div>
 {% endblock %}
