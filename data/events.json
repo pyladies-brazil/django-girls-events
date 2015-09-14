@@ -4,7 +4,7 @@
         "title":"Django Girls Niterói",
         "description":"",
         "color":"#f7921d",
-        "coordinates":["-43", "-22"],
+        "coordinates":["-43.06", "-22.90"],
         "date": "2015-06-20",
         "site": "https://djangogirls.org/niteroi/",
         "local": "Niterói - RJ",
@@ -18,7 +18,7 @@
         "title":"Django Girls São José dos Campos",
         "description":"",
         "color":"#2E9E9E",
-        "coordinates":["-45", "-23"],
+        "coordinates":["-45.87", "-23.18"],
         "date": "2015-11-07",
         "site": "https://djangogirls.org/saojosedoscampos/",
         "local": "São José dos Campos - SP",
@@ -26,5 +26,19 @@
         "twitter": "https://twitter.com/djangogirlssjc",
         "facebook": "https://www.facebook.com/djangogirlssjc",
         "github": "https://github.com/orgs/djangogirls-sjc"
+    },
+    {
+        "id":"django-girls-maringa",
+        "title":"Django Girls Maringá",
+        "description":"",
+        "color":"#f7921d",
+        "coordinates":["-51.93", "-23.42"],
+        "date": "2015-11-14",
+        "site": "https://djangogirls.org/maringa/",
+        "local": "Maringá - PR",
+        "email": "maringa@djangogirls.org",
+        "twitter": "",
+        "facebook": "",
+        "github": ""
     }
 ]
