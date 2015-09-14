@@ -14,10 +14,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-lg-6">
-  {% include 'includes/events-list.html' %}
-</div>
-<div class="col-lg-6">
-  <div id="map"></div>
+<div class="row">
+  <div class="col-lg-6">
+    {% include 'includes/events-list.html' %}
+  </div>
+  <div class="col-lg-6">
+    <div id="map"></div>
+  </div>
 </div>
 {% endblock %}

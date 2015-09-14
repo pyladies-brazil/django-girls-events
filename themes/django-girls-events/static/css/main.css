@@ -2,6 +2,7 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: lighter;
 }
+/** NAVBAR **/
 .navbar-brand {
   height: 80px;
   padding: 0px 15px;
@@ -13,6 +14,24 @@ body {
 .navbar {
   background-color: #f7921d;
 }
+ul.nav {
+  margin: 0;
+}
+ul.nav li {
+  font-weight: bold !important;
+  font-size: 22px;
+  line-height: 50px;
+  margin: 15px 0;
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  text-transform: uppercase;
+}
+ul.nav li a {
+  color: #fff !important;
+  padding-right: 0;
+  padding-left: 30px;
+}
+/** END NAVBAR **/
 /** BODY CONTENT **/
 #content {
   margin-top: 100px;
