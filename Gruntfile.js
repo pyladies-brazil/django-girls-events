@@ -170,7 +170,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('build', ['karma', 'jshint', 'concat', 'uglify', 'shell:pelican', 'shell:copy']);
+  grunt.registerTask('test', ['karma', 'jshint']);
+  grunt.registerTask('build', ['test', 'concat', 'uglify', 'shell:pelican', 'shell:copy']);
   grunt.registerTask('server', ['build', 'connect', 'watch']);
 
 };

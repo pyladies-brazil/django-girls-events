@@ -29,7 +29,7 @@ Para adicionar o seu evento, faça um fork deste projeto e altere o arquivo data
 Execute os testes e caso todos eles tenham passado, faça um pull request para este repositório.
 Para executar os testes digite:
 ```sh
-grunt karma
+grunt test
 ```
 O seu pull request sendo aceito, está pronto! Seu evento será listado na home do projeto.
 
