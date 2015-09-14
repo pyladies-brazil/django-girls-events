@@ -3,6 +3,9 @@ body {
   font-weight: lighter;
 }
 /** NAVBAR **/
+.header-navbar {
+  height: 80px;
+}
 .navbar-brand {
   height: 80px;
   padding: 0px 15px;
@@ -32,10 +35,13 @@ ul.nav li a {
   padding-left: 30px;
 }
 /** END NAVBAR **/
-/** BODY CONTENT **/
-#content {
-  margin-top: 100px;
+.overlay {
+  width: 100%;
+  height: 450px;
+  background-image: url('../img/django_stickers.jpg');
+  background-size: cover;
 }
+/** BODY CONTENT **/
 #map {
   height: 500px;
 }
@@ -64,6 +70,38 @@ ul.agenda li a {
   color: #ffffff;
   margin-left: 5px;
   font-size: 20px;
+}
+.icons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.icons p {
+  margin-top: 10px;
+}
+.icon {
+  padding: 20px;
+  border: 4px solid #f7921d;
+  border-radius: 135px;
+  width: 135px;
+  margin: auto;
+  color: #f7921d;
+}
+.icon .fa{
+  font-size: 100px;
+  line-height: 86px;
+  position: relative;
+}
+.icon .fa-heart{
+  left: -6px;
+  top: 4px;
+}
+.icon .fa-github-alt{
+  left: -3px;
+  top: -2px;
+}
+.icon .fa-plus{
+  left: 4px;
+  top: 4px;
 }
 /** END BODY CONTENT **/
 /** FOOTER **/
