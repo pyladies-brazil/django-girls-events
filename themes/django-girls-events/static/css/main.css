@@ -75,8 +75,12 @@ ul.agenda li a {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.icons h3 {
+  text-align: center;
+}
 .icons p {
   margin-top: 10px;
+  text-align: justify;
 }
 .icon {
   padding: 20px;
@@ -102,6 +106,16 @@ ul.agenda li a {
 .icon .fa-plus{
   left: 4px;
   top: 4px;
+}
+.icon .fa-book{
+  left: -1px;
+}
+.icon .fa-star{
+  left: -2px;
+}
+.icon .fa-graduation-cap{
+  left: -11px;
+   font-size: 85px;
 }
 /** END BODY CONTENT **/
 /** FOOTER **/

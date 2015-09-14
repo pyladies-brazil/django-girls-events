@@ -1,4 +1,4 @@
-/*! django-girls-events - v0.0.0 - 2015-09-13
+/*! django-girls-events - v0.0.0 - 2015-09-14
 * Copyright (c) 2015 ; Licensed  */
 var pinFactory = function(pin_data) {
   var pin_size = 'medium';

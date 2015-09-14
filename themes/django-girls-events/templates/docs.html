@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  {{ super() }}
+  <link href='{{ STATIC_URL }}/css/font-awesome.min.css' rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+<h2>Documentação</h2>
+<p>Nem toda a documentação do Django Girls se encontra atualmente traduzida para o pt-br. Caso você tenha interesse em ajudar com isso nós seríamos eternamente gratas <3 Faça o fork de algum <a href="https://djangogirls.org/resources/">repositório de documentação do Django Girls</a> e nos avise. Nós podemos te ajudar com esta missão e assim que for finalizada vamos adicioná-la aqui.</p>
+<p>Atualmente três documentos estão completamente traduzidos para o pt-br mas sempre estão em constante atualização:</p>
+<div class="row icons">
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="icon">
+      <i class="fa fa-book"></i>
+    </div>
+    <h3>Django Girls Tutorial</h3>
+    <p>O Tutorial é a base dos nossos workshops. Completamente voltado para iniciantes, ele possui informações sobre linha de comando, Python, Django, HTML e CSS. Você pode acessá-lo <a href="http://tutorial.djangogirls.org/pt/index.html">neste link</a>. Para ajudar nesse projeto de tradução basta ter uma conta no <a href="https://crowdin.com/">Crowdin</a> e <a href="https://crowdin.com/project/django-girls-tutorial/pt-BR">acessá-lo aqui</a>.</p>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="icon">
+      <i class="fa fa-star"></i>
+    </div>
+    <h3>Manual d@ Organizador@</h3>
+    <p>Este Manual é uma mão na roda para quem quer iniciar um evento Django Girls. Ele possui praticamente todas as informações possíveis para isto! (coletadas e atualizadas com as experiências de todos os eventos passados) Para ajudar neste projeto, faça um fork do <a href="https://github.com/pyladies-brazil/organizer-manual/">nosso repositório</a> e submeta a tradução através de pull request.</p>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="icon">
+      <i class="fa fa-graduation-cap"></i>
+    </div>
+    <h3>Manual d@ Treinador@</h3>
+    <p>Não se deixe enganar: Guiar iniciantes pelo caminho do conhecimento não é uma tarefa fácil! Este manual irá auxiliar @s treinador@s nesta tarefa. Para ajudar neste projeto, faça um fork do <a href="https://github.com/pyladies-brazil/coach-manual">nosso repositório</a> e submeta a tradução através de pull request.</a>
+  </div>
+</div>
+{% endblock %}
