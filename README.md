@@ -2,25 +2,25 @@
 Este projeto é um agregador de eventos para o Django Girls Brasil.
 
 ## Instalação
-Neste projeto é utilizado o Pelican(http://docs.getpelican.com), para gerar os estáticos, e o Grunt(http://gruntjs.com/) para servir os arquivos no ambiente de desenvolvimento.
+Neste projeto é utilizado o Pelican[http://docs.getpelican.com], para gerar os estáticos, e o Grunt[http://gruntjs.com/] para servir os arquivos no ambiente de desenvolvimento.
 
 ### Instalando dependências
 
 Na raiz do projeto, para instalar o Pelican e suas dependências, execute:
-'''sh
+```sh
 pip install -r requirements.txt
-'''
+```
 
 Na raiz do projeto, para instalar o Grunt e suas dependências, execute:
-'''sh
+```sh
 npm install
-'''
+```
 
 ## Executando localmente
 Depois de instaladas as dependências, para executar este projeto localmente, digite na raiz do projeto:
-'''sh
+```sh
 grunt server
-'''
+```
 O grunt irá executar todas as tarefas e irá levantar um servidor em http://localhost:9000
 Para acessar os estáticos gerados, acesse http://localhost:9000/output
 
